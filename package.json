@@ -1,0 +1,37 @@
+{
+  "name": "f-up-prepare",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "setup-env": "bun scripts/setup-env.js",
+    "dev": "bun run setup-env && concurrently \"bun run dev:server\" \"bun run dev:client\"",
+    "dev:server": "cd server && bun run dev",
+    "dev:client": "cd client && bun run dev",
+    "start": "bun run setup-env && concurrently \"bun run start:server\" \"bun run start:client\"",
+    "start:server": "cd server && bun run start",
+    "start:client": "cd client && bun run start",
+    "install:all": "bun install && cd server && bun install && cd ../client && bun install",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "test": "bun test",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@types/bun": "latest",
+    "eslint": "^9.29.0",
+    "globals": "^16.2.0",
+    "concurrently": "^8.2.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.9.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "prisma": "^6.9.0"
+  }
+}

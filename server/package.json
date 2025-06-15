@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/server.js",
+    "start": "bun src/server.js"
+  },
+  "dependencies": {
+    "@prisma/client": "latest",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "prisma": "latest"
+  }
+}
